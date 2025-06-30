@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 90%;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10x;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 1px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body background="cbse.png">
+    <center >
+        <table >
+            <caption>Marksheet</caption>
+            <tr>
+                <td><img src="/images/cbse.png" width="150" height="100" alt="CBSE Logo">
+</td>
+                <td><h2>Central Board of Secondary Education New Delhi</h2></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><b>School Name</b></td>
+                <td colspan="3">Gov. High Secondary School</td>
+            </tr>
+            <tr>
+                <td><b>Roll Number</b></td>
+                <td><%= rollno %></td>
+                <td><b>Student Name</b></td>
+                <td><%= name %></td>
+            </tr>
+            <tr>
+                <td><b>Gender</b></td>
+                <td><%= gender %></td>
+                <td><b>Date of Birth</b></td>
+                <td><%= dob %></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th>Minimum Marks</th>
+                <th>Maximum Marks</th>
+                <th>Obtained Marks</th>
+                <th>Remark</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Hindi</td>
+                <td>35</td>
+                <td>100</td>
+                <td><%= hindi %></td>
+                <td><%= remark1 %></td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>English</td>
+                <td>35</td>
+                <td>100</td>
+                <td><%= english %></td>
+                <td><%= remark2 %></td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Maths</td>
+                <td>35</td>
+                <td>100</td>
+                <td><%= maths %></td>
+                <td><%= remark3 %></td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Physics</td> 
+                <td>35</td>
+                <td>100</td>
+                <td><%= physics %></td>
+                <td><%= remark4 %></td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Chemistry</td>
+                <td>35</td>
+                <td>100</td>
+                <td><%= chemistry %></td>
+                <td><%= remark5 %></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><b>Total</b></td>
+                <td>500</td>
+                <td><%= total %></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Result: <%= result %></th>
+                <th>Percentage: <%= per.toFixed(2) %>%</th>
+                <th>Grade: <%= grade %></th>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
