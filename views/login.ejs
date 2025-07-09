@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(https://res.cloudinary.com/dwrfuvaut/image/upload/v1752047792/bg_sp4cql.png);
+            background-size: cover;           
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            width: 850px;
+            max-width: 95%;
+            display: flex;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .left {
+            width: 50%;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .left img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .right {
+            width: 50%;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right h2 {
+            font-size: 28px;
+            color: #2f3542;
+        }
+
+        .right h3 {
+            font-size: 16px;
+            color: #3742fa;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dcdde1;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #6c5ce7;
+        }
+
+        .password-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #718093;
+            margin-top: -10px;
+        }
+
+        .password-row a {
+            color: #3742fa;
+            text-decoration: none;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            background: linear-gradient(to right, #6c5ce7, #ff6b81);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .bottom-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .bottom-text a {
+            color: #3742fa;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div
+            style="width: 50%;background: #060124;display: flex;align-items: center;border-top-right-radius: 50%;border-bottom-right-radius: 50%;">
+            <img width="250rem" style="margin-left: 10%;"
+                src="https://res.cloudinary.com/dwrfuvaut/image/upload/v1752045796/log_rz8njb.png"
+                alt="Login Illustration" />
+        </div>
+        <div class="right">
+            <h2>WELCOME BACK</h2>
+            <h3>LOGIN PAGE</h3>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email address" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <div class="password-row">
+                    <div></div>
+                    
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <button type="reset" class="btn">Reset</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
