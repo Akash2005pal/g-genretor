@@ -1,0 +1,15 @@
+var multer=require('multer')
+const{uuid}=require('uuidv4');
+
+var serverpath=multer.diskStorage({
+    destination:(req,File,path)=>{
+        path(null,'public/images')
+    },
+    filename:(req,file,path)=>{
+        var ext=file.originalname.substring(file.originalname.lastIndexOf("."))
+        var myfile=uuid()+ext
+        path(null,myfile)
+    }
+})
+var upload=multer({storage:serverpath})
+module.exports=upload

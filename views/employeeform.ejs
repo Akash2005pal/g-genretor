@@ -1,43 +1,11 @@
-<style>
-  .maincontainer {
-    letter-spacing: 0.6px;
-    font-family: Barlow Condensed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .box {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    width: 800px;
-    height: auto;
-    flex-direction: column;
-    border: 1px solid #7f8c8d;
-    border-radius: 10px;
-    padding: 10px;
-  }
-
-  .headingbox {
-    display: flex;
-    border-radius: 5px;
-    background: #c7ecee;
-    width: 170px;
-    margin: 10px 10px 0px 10px;
-    padding: 5px;
-    align-self: flex-start;
-  }
-</style>
 
 <html>
-<form action="/employee/insert_record" method="post">
+<form action="/employee/insert_record" enctype="multipart/form-data" method="post">
 
   <head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
     <script src="/javascripts/project.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,50 +38,46 @@
       <div class="container" style="width: 98%">
         <div class="row">
           <div class="col-6">
-            <input type="text" name="employeesname" class="form-control" placeholder="Employee Name" />
+            <input type="text" required pattern="[a-z A-Z]+" title="Pls Input Alphabet only" name="employeesname" class="form-control" placeholder="Employee Name" />
           </div>
 
           <div class="col-6">
-            <input type="date" name="dob" class="form-control" />
+            <input type="date" required name="dob" class="form-control" />
           </div>
         </div>
 
         <div class="row" style="margin-top: 10px">
           <div class="col-3">
             <div class="form-check form-check-inline">
-              <input type="radio" value="Male" name="gender" class="form-check-input" />Male
+              <input type="radio" required value="Male" name="gender" class="form-check-input" />Male
             </div>
             <div class="form-check form-check-inline">
-              <input type="radio" value="Female" name="gender" class="form-check-input" />Female
+              <input type="radio" required value="Female" name="gender" class="form-check-input" />Female
             </div>
           </div>
           <div class="col-9">
-            <input type="text" name="address" class="form-control" placeholder="Address" />
+            <input type="text" required name="address" class="form-control" placeholder="Address" />
           </div>
         </div>
         <div class="row" style="margin-top: 10px">
           <div class="col-6">
-            <select class="form-select" name="id" id="stateid">
+            <select class="form-select" name="id" id="stateid" required>
               <option selected>Select State</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+             
             </select>
           </div>
 
           <div class="col-6">
-            <select class="form-select" name="cityid" id="cityid">
+            <select class="form-select" name="cityid" id="cityid" required>
               <option selected>Select City</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+
             </select>
           </div>
         </div>
 
-        <div class="row" style="margin-top: 10px">
+        <div class="row" required style="margin-top: 10px">
           <div class="col-4">
-            <select class="form-select" name="department">
+            <select class="form-select" name="department" >
               <option selected>Select Department</option>
               <option>Production</option>
               <option>Accounts</option>
@@ -121,9 +85,9 @@
             </select>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" >
             <select class="form-select" name="grade">
-              <option selected>Select Grade</option>
+              <option  selected>Select Grade</option>
               <option>Grade One</option>
               <option>Grade Two</option>
               <option>Grade Three</option>
@@ -131,13 +95,13 @@
           </div>
 
           <div class="col-4">
-            <input type="text" name="salary" class="form-control" placeholder="Employee Salary" />
+            <input type="text" name="salary" class="form-control" placeholder="Employee Salary" required/>
           </div>
         </div>
         <div class="row" style="margin-top: 10px">
           <div class="col-6">
             <label for="formFile" class="form-label">Upload Latest Picture:</label>
-            <input id="picture" class="form-control" type="file" name="picture" />
+            <input id="picture" required class="form-control" type="file" name="picture" />
           </div>
           <div class="col-6" style="display: flex; justify-content: center; align-items: center">
             <img id="epic" src="/images/employee.png" style="width: 45px;height: 60px; border-radius: 30px;" />
@@ -154,7 +118,7 @@
         </div>
         <div class="row" style="margin-top: 10px">
           <div col-12 style="display: flex; justify-content: center;">
-          <font color="<%= color %>">
+            <font color="<%= color %>">
 
               <%=message %>
             </font>

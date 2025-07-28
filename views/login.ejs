@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Netflix Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
         * {
@@ -15,8 +15,8 @@
         }
 
         body {
-            background-image: url(https://res.cloudinary.com/dwrfuvaut/image/upload/v1752047792/bg_sp4cql.png);
-            background-size: cover;           
+            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/83ebd65b-7e64-4373-8c49-4fc527d2ac3a/2aaf6d85-9f6c-405d-a2c7-91675e2cf539/IN-en-20230703-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -26,47 +26,18 @@
             align-items: center;
         }
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            width: 850px;
-            max-width: 95%;
-            display: flex;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        .login-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 60px 70px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            color: #fff;
         }
 
-        .left {
-            width: 50%;
-            background: #f5f6fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
-
-        .left img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .right {
-            width: 50%;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .right h2 {
-            font-size: 28px;
-            color: #2f3542;
-        }
-
-        .right h3 {
-            font-size: 16px;
-            color: #3742fa;
-            margin-bottom: 25px;
+        .login-container h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
         }
 
         .form-group {
@@ -75,99 +46,99 @@
 
         .form-group input {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #dcdde1;
-            border-radius: 8px;
-            outline: none;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
         }
 
-        .form-group input:focus {
-            border-color: #6c5ce7;
-        }
-
-        .password-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #718093;
-            margin-top: -10px;
-        }
-
-        .password-row a {
-            color: #3742fa;
-            text-decoration: none;
+        .form-group input::placeholder {
+            color: #bbb;
         }
 
         .btn {
-            margin-top: 25px;
-            padding: 12px;
+            background: #e50914;
             border: none;
+            padding: 15px;
             width: 100%;
-            border-radius: 8px;
-            background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
             color: white;
             font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s ease;
+            margin-top: 10px;
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background: #f6121d;
         }
 
-        .bottom-text {
-            text-align: center;
-            margin-top: 20px;
+        .options {
+            display: flex;
+            justify-content: space-between;
             font-size: 14px;
+            margin-top: 15px;
+            color: #aaa;
         }
 
-        .bottom-text a {
-            color: #3742fa;
-            font-weight: 500;
+        .options a {
+            color: #aaa;
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .signup {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .signup a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 40px 30px;
             }
 
-            .left,
-            .right {
-                width: 100%;
+            .login-container h2 {
+                font-size: 24px;
             }
-
-
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div
-            style="width: 50%;background: #060124;display: flex;align-items: center;border-top-right-radius: 50%;border-bottom-right-radius: 50%;">
-            <img width="250rem" style="margin-left: 10%;"
-                src="https://res.cloudinary.com/dwrfuvaut/image/upload/v1752045796/log_rz8njb.png"
-                alt="Login Illustration" />
-        </div>
-        <div class="right">
-            <h2>WELCOME BACK</h2>
-            <h3>LOGIN PAGE</h3>
-            <form>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email address" required />
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required />
-                </div>
-                <div class="password-row">
-                    <div></div>
-                    
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <button type="reset" class="btn">Reset</button>
-            </form>
-        </div>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <form >
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email or phone number" required />
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required />
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+
+            <div class="options">
+                <label><input type="checkbox" /> Remember me</label>
+                <a href="#">Need help?</a>
+            </div>
+
+            <div class="signup">
+                New to Netflix? <a href="/netflix/signup">Sign up now</a>
+            </div>
+        </form>
     </div>
 </body>
 
